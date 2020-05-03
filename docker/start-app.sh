@@ -13,5 +13,5 @@ JAVA_OPTS="${JAVA_OPTS} \
   -Dapplication.home=${APP_HOME}"
 
 exec java ${JAVA_OPTS} \
-  -jar "${APP_HOME}/${APP_NAME}.jar"
+  -jar "${APP_HOME}/${APP_NAME}.jar" \
   --spring.config.location="${APP_CONFIG}/application.yml"

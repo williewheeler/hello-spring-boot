@@ -9,6 +9,7 @@ EXPOSE 8080
 
 RUN mkdir -p ${APP_HOME}
 WORKDIR ${APP_HOME}
+
 COPY ./target/${APP_NAME}-*.jar ./${APP_NAME}.jar
 COPY ./docker/start-app.sh .
 
