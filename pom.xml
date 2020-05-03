@@ -8,12 +8,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>hello-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <name>hello-spring-boot</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -47,22 +47,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <profiles>
-                        <profile>dev</profile>
-                    </profiles>
-                </configuration>
-                <!--
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                -->
             </plugin>
         </plugins>
     </build>
-
 </project>

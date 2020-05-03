@@ -2,24 +2,44 @@
 
 A "Hello World" app based on Spring Boot.
 
-## Building the app (fat JAR)
+## Building
+
+#### With Maven (fat JAR)
 
 ```
-$ mvn clean install spring-boot:repackage
+$ mvn clean verify spring-boot:repackage
 ```
 
-## Running the app from Maven (default dev profile)
+#### With Docker
+
+First build the fat JAR as shown above. Then
+
+```
+$ docker build -t hello-spring-boot .
+```
+
+## Running
+
+#### With Java
+
+```
+$ java -jar ./target/hello-spring-boot-0.0.1-SNAPSHOT.jar
+```
+
+#### With Maven
 
 ```
 $ mvn spring-boot:run
 ```
 
-## Running the app from the command line
-
-First build the fat JAR as shown above. Then from the top-level directory:
+#### With Docker
 
 ```
-$ java -jar -Dspring.profiles.active=dev target/demo-0.0.1-SNAPSHOT.jar
+$ docker run -it \
+  -p 8080:8080 \
+  --name hello-spring-boot \
+  --mount type=bind,source="$(pwd)"/config,target=/config \
+  hello-spring-boot
 ```
 
-The app contains `dev`, `test` and `prod` profiles.
+Point your browser at http://localhost:8080/.
